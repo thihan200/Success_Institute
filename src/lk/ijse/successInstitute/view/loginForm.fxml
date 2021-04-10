@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="423.0" prefWidth="356.0" style="-fx-background-color: #f7f1e3;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.successInstitute.controller.LoginFormController">
+   <children>
+      <BorderPane prefHeight="73.0" prefWidth="377.0" style="-fx-background-color: #6a89cc;">
+         <center>
+            <Label text="Log Into Continue" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="Algerian" size="30.0" />
+               </font>
+            </Label>
+         </center></BorderPane>
+      <ImageView fitHeight="97.0" fitWidth="125.0" layoutX="140.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asserts/purposefulman.png" />
+         </image>
+      </ImageView>
+      <JFXTextField fx:id="txtUserName" labelFloat="true" layoutX="82.0" layoutY="231.0" onAction="#usenameOnAction" prefHeight="25.0" prefWidth="214.0" promptText="Enter Username " text="success" />
+      <JFXPasswordField fx:id="txtpwd" labelFloat="true" layoutX="82.0" layoutY="288.0" onAction="#loginOnActionm" prefHeight="25.0" prefWidth="214.0" promptText="Enter Password" text="12345" />
+      <JFXButton layoutX="82.0" layoutY="346.0" onAction="#LoginOnAction" prefHeight="25.0" prefWidth="214.0" style="-fx-background-color: #82ccdd;" text="LOGIN">
+         <font>
+            <Font name="Berlin Sans FB" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Separator layoutX="-1.0" layoutY="74.0" prefHeight="3.0" prefWidth="377.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="successMonthlyReport" pageWidth="495" pageHeight="360" columnWidth="455" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="16969848-066d-4bb3-bf72-6b4599365639">
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<queryString>
+		<![CDATA[SELECT SUM(Amount)
+FROM paymentdetail
+GROUP BY MONTH(Date) 
+ORDER BY DATE DESC LIMIT 1;]]>
+	</queryString>
+	<field name="SUM(Amount)" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="SUM(Amount)"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="65" y="0" width="355" height="51" uuid="a826ae11-ad89-4c33-9766-3ef91d9b8968"/>
+				<textElement>
+					<font fontName="Algerian" size="20" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Success Higher Education Center]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="101" y="40" width="279" height="31" uuid="1bdcabe3-d881-495c-ad37-79b961d8df24"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[ Sri Vipulasiri Mawatha, Old Road, Kalutara]]></text>
+			</staticText>
+			<line>
+				<reportElement x="65" y="71" width="345" height="1" uuid="dfe3bd9b-5164-4655-aae8-828df47db5f4"/>
+				<graphicElement>
+					<pen lineWidth="2.0"/>
+				</graphicElement>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="100" splitType="Stretch">
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="0" y="10" width="140" height="30" uuid="76a83318-2d93-44dd-856e-2d6d23d16ee2"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm">
+				<reportElement x="150" y="10" width="140" height="30" uuid="ed88af0e-d913-41c3-8f29-93bf4ac53861"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="110" y="70" width="110" height="30" uuid="edcad89e-792c-42bc-bc42-db8ce2cb6014"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Month]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="250" y="70" width="150" height="30" uuid="610352cc-dc88-411a-ad78-f39d669e4c8e"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Income]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="71" splitType="Stretch">
+			<textField pattern="MMMM">
+				<reportElement x="110" y="0" width="100" height="30" uuid="d2826b72-37b1-426b-9dde-306b964fe605"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="250" y="0" width="30" height="30" uuid="21d74343-5362-4f5b-82cf-4a89ef94079f"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Rs.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="275" y="0" width="100" height="30" uuid="0d9b2153-9c84-45fa-af8a-ee60be7f2267"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{SUM(Amount)}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="250" y="33" width="80" height="1" uuid="ddee5005-7f20-47cb-9af4-822e66d56c5a"/>
+			</line>
+			<line>
+				<reportElement x="250" y="30" width="80" height="1" uuid="e8ec20a7-75e4-4d5e-b271-438294565c68"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="117" y="20" width="220" height="20" uuid="14d242e2-b21c-4af6-ab42-ba72d69cea60"/>
+				<text><![CDATA[Software Developd By Thiha Technologies]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

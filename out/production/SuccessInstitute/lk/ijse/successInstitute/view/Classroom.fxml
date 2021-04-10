@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="580.0" prefWidth="850.0" style="-fx-background-color: #f7f1e3;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.successInstitute.controller.ClassController">
+   <children>
+      <Label layoutX="14.0" layoutY="33.0" prefHeight="28.0" prefWidth="171.0" text="Classroom Details">
+         <font>
+            <Font name="Calibri Bold" size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="700.0" layoutY="40.0" prefHeight="17.0" prefWidth="128.0" text="Home &gt; Classrooms" textFill="#653e3e">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="17.0" fitWidth="14.0" layoutX="675.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asserts/home.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="32.0" layoutY="80.0" prefHeight="177.0" prefWidth="466.0" style="-fx-background-color: #b2bec3;">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" text="Add New Classroom" textFill="#515151">
+               <font>
+                  <Font name="Calibri Bold" size="15.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="btnAddClass" layoutX="251.0" layoutY="91.0" onAction="#ClassOnAction" prefHeight="25.0" prefWidth="206.0" style="-fx-background-color: #00b894;" text="Add New Class">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXTextField fx:id="txtClassName" labelFloat="true" layoutX="14.0" layoutY="106.0" prefHeight="25.0" prefWidth="206.0" promptText="Class Name" />
+            <JFXTextField fx:id="txtClassId" labelFloat="true" layoutX="14.0" layoutY="49.0" prefHeight="25.0" prefWidth="171.0" promptText="Class ID" />
+            <JFXTextField fx:id="txtStudentLimit" labelFloat="true" layoutX="251.0" layoutY="49.0" prefHeight="25.0" prefWidth="199.0" promptText="Student Limit" />
+            <JFXButton fx:id="btnClear" layoutX="286.0" layoutY="131.0" onAction="#CllearOnAction" prefHeight="30.0" prefWidth="128.0" style="-fx-background-color: #ff6b6b;" text="Clear All">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <Label layoutX="32.0" layoutY="290.0" prefHeight="28.0" prefWidth="171.0" text="Classroom Details">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblclassroom" layoutX="32.0" layoutY="326.0" prefHeight="234.0" prefWidth="466.0">
+        <columns>
+          <TableColumn fx:id="colCID" prefWidth="125.0" text="Class ID" />
+          <TableColumn fx:id="colClassName" prefWidth="121.0" text="Class Name" />
+            <TableColumn fx:id="colStudentLimit" prefWidth="134.0" text="Student Limit" />
+            <TableColumn fx:id="colOperate" prefWidth="85.0" text="Operate" />
+        </columns>
+      </TableView>
+      <JFXTextField fx:id="txtSearch" labelFloat="true" layoutX="293.0" layoutY="292.0" onKeyReleased="#searchOnAction" prefHeight="25.0" prefWidth="199.0" promptText="Search..." />
+      <ImageView fitHeight="292.0" fitWidth="255.0" layoutX="548.0" layoutY="147.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asserts/classroompic.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

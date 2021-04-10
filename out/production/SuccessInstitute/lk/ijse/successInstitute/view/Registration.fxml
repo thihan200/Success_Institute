@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="538.0" prefWidth="567.0" style="-fx-background-color: #f6e58d;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.successInstitute.controller.RegistrationController">
+   <children>
+      <Label layoutX="14.0" layoutY="22.0" prefHeight="28.0" prefWidth="177.0" text="Registration Details">
+         <font>
+            <Font name="Calibri Bold" size="21.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblRegistration" layoutX="58.0" layoutY="100.0" prefHeight="417.0" prefWidth="452.0">
+        <columns>
+          <TableColumn fx:id="colRegId" prefWidth="134.0" text="Registration ID" />
+          <TableColumn fx:id="colRegDate" minWidth="0.0" prefWidth="163.0" text="Date" />
+            <TableColumn fx:id="colStuId" prefWidth="154.0" text="Student ID" />
+        </columns>
+      </TableView>
+      <Label layoutX="374.0" layoutY="28.0" prefHeight="17.0" prefWidth="177.0" text="Students&gt;Registraion Details" textFill="#653e3e">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="17.0" fitWidth="14.0" layoutX="350.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asserts/home.png" />
+         </image>
+      </ImageView>
+      <JFXTextField fx:id="txtSearch" layoutX="328.0" layoutY="66.0" onKeyReleased="#searchOnAction" prefHeight="25.0" prefWidth="177.0" promptText="Search..." />
+   </children>
+</AnchorPane>

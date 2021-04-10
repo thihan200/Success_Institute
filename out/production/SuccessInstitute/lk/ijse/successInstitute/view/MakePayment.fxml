@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="580.0" prefWidth="850.0" style="-fx-background-color: #f7f1e3;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.successInstitute.controller.MakePaymentController">
+   <children>
+      <TableView fx:id="tblPayment" layoutX="20.0" layoutY="336.0" prefHeight="233.0" prefWidth="798.0">
+        <columns>
+          <TableColumn fx:id="colPid" prefWidth="97.0" text="Payment ID" />
+          <TableColumn fx:id="colDate" prefWidth="110.0" text="Date" />
+            <TableColumn fx:id="colSname" prefWidth="178.0" text="Subject Name" />
+            <TableColumn fx:id="colRegfee" prefWidth="103.0" text="Reg Fee Status" />
+            <TableColumn fx:id="colStuid" prefWidth="125.0" text="Student ID" />
+            <TableColumn fx:id="colTotal" prefWidth="84.0" text="Total" />
+            <TableColumn fx:id="colOperate" prefWidth="100.0" text="Operate" />
+        </columns>
+      </TableView>
+      <Label layoutX="14.0" layoutY="19.0" prefHeight="28.0" prefWidth="165.0" text="Make Payment">
+         <font>
+            <Font name="Calibri Bold" size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="670.0" layoutY="31.0" prefHeight="17.0" prefWidth="156.0" text="Home &gt; Make Payments" textFill="#653e3e">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="17.0" fitWidth="14.0" layoutX="644.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asserts/home.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="20.0" layoutY="61.0" prefHeight="233.0" prefWidth="751.0" style="-fx-background-color: #b2bec3;">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" text="Add Payment" textFill="#515151">
+               <font>
+                  <Font name="Calibri Bold" size="15.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtPid" labelFloat="true" layoutX="14.0" layoutY="48.0" promptText="Payment ID" />
+            <JFXTextField fx:id="txtRegfee" labelFloat="true" layoutX="255.0" layoutY="36.0" prefHeight="25.0" prefWidth="206.0" promptText="Registration Fee Status" text="PAID" />
+            <JFXButton fx:id="btnPayment" layoutX="509.0" layoutY="121.0" onAction="#PaymentOnAction" prefHeight="25.0" prefWidth="206.0" style="-fx-background-color: #00b894;" text="Add Payment">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXComboBox fx:id="cmbStudentId" editable="true" labelFloat="true" layoutX="255.0" layoutY="96.0" onKeyReleased="#cmbSearchOnAction" prefHeight="25.0" prefWidth="206.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXComboBox>
+            <JFXTextField fx:id="txtdate" labelFloat="true" layoutX="14.0" layoutY="96.0" promptText="Date" />
+            <JFXTextField fx:id="txtTotall" labelFloat="true" layoutX="255.0" layoutY="151.0" prefHeight="25.0" prefWidth="206.0" promptText="Total (Rs.)" />
+            <JFXComboBox fx:id="cmbSubjectName" labelFloat="true" layoutX="14.0" layoutY="148.0" prefHeight="25.0" prefWidth="206.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXComboBox>
+            <JFXButton fx:id="btnClear" layoutX="509.0" layoutY="159.0" onAction="#ClearOnAction" prefHeight="29.0" prefWidth="206.0" style="-fx-background-color: #ff6b6b;" text="Refresh">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <Label layoutX="14.0" layoutY="209.0" prefHeight="17.0" prefWidth="196.0" text="Amount For Theory Class - 1200/=">
+               <font>
+                  <Font name="Arial Narrow Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="509.0" layoutY="209.0" prefHeight="17.0" prefWidth="206.0" text="Amount For Revision Class - 1000/=">
+               <font>
+                  <Font name="Arial Narrow Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="295.0" layoutY="209.0" prefHeight="17.0" prefWidth="206.0" text="Theory + Revision - 2000/=">
+               <font>
+                  <Font name="Arial Narrow Bold" size="12.0" />
+               </font>
+            </Label>
+            <Separator layoutX="-1.0" layoutY="200.0" prefHeight="7.0" prefWidth="751.0" />
+            <JFXTextField fx:id="txtCash" labelFloat="true" layoutX="509.0" layoutY="23.0" onAction="#CashOnAction" prefHeight="25.0" prefWidth="206.0" promptText="Cash (Rs.)" />
+            <JFXTextField fx:id="txtCBalance" labelFloat="true" layoutX="509.0" layoutY="73.0" prefHeight="25.0" prefWidth="206.0" promptText="Balance (Rs.)" />
+            <Label layoutX="14.0" layoutY="136.0" prefHeight="17.0" prefWidth="147.0" text="Subject Name">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label layoutX="255.0" layoutY="84.0" prefHeight="17.0" prefWidth="147.0" text="Student ID">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label layoutX="20.0" layoutY="302.0" prefHeight="28.0" prefWidth="171.0" text="Last Payments">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtSearch" layoutX="539.0" layoutY="300.0" onKeyReleased="#searchOnAction" prefHeight="25.0" prefWidth="180.0" promptText="Search..." />
+   </children>
+</AnchorPane>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="580.0" prefWidth="850.0" style="-fx-background-color: #f7f1e3;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.successInstitute.controller.EmployeeController">
+   <children>
+      <Label layoutX="24.0" layoutY="27.0" prefHeight="28.0" prefWidth="171.0" text="Employees">
+         <font>
+            <Font name="Calibri Bold" size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="702.0" layoutY="33.0" prefHeight="17.0" prefWidth="121.0" text="Home &gt; Employees" textFill="#653e3e">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="17.0" fitWidth="14.0" layoutX="678.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asserts/home.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="22.0" layoutY="73.0" prefHeight="236.0" prefWidth="653.0" style="-fx-background-color: #b2bec3;">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" text="Add New Employee" textFill="#515151">
+               <font>
+                  <Font name="Calibri Bold" size="15.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtEmployeeID" labelFloat="true" layoutX="14.0" layoutY="61.0" promptText="Employee ID" />
+            <JFXTextField fx:id="txtEmployeeName" labelFloat="true" layoutX="14.0" layoutY="118.0" prefHeight="25.0" prefWidth="206.0" promptText="Name in Full" />
+            <JFXTextField fx:id="txtEmployeeAddress" labelFloat="true" layoutX="14.0" layoutY="182.0" prefHeight="25.0" prefWidth="206.0" promptText="Address" />
+            <JFXDatePicker fx:id="txtdob" layoutX="259.0" layoutY="32.0" prefHeight="25.0" prefWidth="206.0" promptText="Date of Birth" />
+            <Label layoutX="269.0" layoutY="135.0" text="Gender" textFill="#4d4d4d">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font>
+            </Label>
+            <JFXRadioButton fx:id="radioMale" layoutX="286.0" layoutY="162.0" text="Male">
+               <toggleGroup>
+                  <ToggleGroup fx:id="gender" />
+               </toggleGroup>
+            </JFXRadioButton>
+            <JFXRadioButton fx:id="radioFemale" layoutX="286.0" layoutY="190.0" prefHeight="17.0" prefWidth="87.0" text="Female" toggleGroup="$gender" />
+            <JFXButton fx:id="btnRegister" layoutX="408.0" layoutY="133.0" onAction="#registerOnAction" prefHeight="38.0" prefWidth="206.0" style="-fx-background-color: #00b894;" text="Register">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXTextField fx:id="txtEmployeeContact" labelFloat="true" layoutX="259.0" layoutY="86.0" prefHeight="25.0" prefWidth="171.0" promptText="Contact Number" />
+            <JFXTextField fx:id="txtPosition" labelFloat="true" layoutX="479.0" layoutY="32.0" prefHeight="25.0" prefWidth="135.0" promptText="Position" />
+            <JFXButton fx:id="btnClear" layoutX="408.0" layoutY="180.0" onAction="#clearOnAction" prefHeight="38.0" prefWidth="206.0" style="-fx-background-color: #ff6b6b;" text="Clear All Fields">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <TableView fx:id="tblEmployee" layoutX="24.0" layoutY="354.0" prefHeight="200.0" prefWidth="799.0">
+        <columns>
+          <TableColumn fx:id="colEid" prefWidth="107.0" text="Employee ID" />
+          <TableColumn fx:id="colName" prefWidth="93.0" text="Name" />
+            <TableColumn fx:id="colAddress" prefWidth="89.0" text="Address" />
+            <TableColumn fx:id="colContact" prefWidth="99.0" text="Contact" />
+            <TableColumn fx:id="colDOB" prefWidth="93.0" text="DOB" />
+            <TableColumn fx:id="colGender" prefWidth="100.0" text="Gender" />
+            <TableColumn fx:id="colPosition" prefWidth="129.0" text="Position" />
+            <TableColumn fx:id="colOperate" prefWidth="88.0" text="Operate" />
+        </columns>
+      </TableView>
+      <Label layoutX="24.0" layoutY="324.0" prefHeight="28.0" prefWidth="171.0" text="Employee Deatils">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtSearch" labelFloat="true" layoutX="607.0" layoutY="322.0" onAction="#searchOnAction" onKeyReleased="#searchOnAction" prefHeight="25.0" prefWidth="192.0" promptText="Search..." />
+      <ImageView fitHeight="236.0" fitWidth="143.0" layoutX="691.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asserts/employees.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

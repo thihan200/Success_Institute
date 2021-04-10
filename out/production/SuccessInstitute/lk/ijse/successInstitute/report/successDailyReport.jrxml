@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="successDailyReport" pageWidth="495" pageHeight="360" orientation="Landscape" columnWidth="455" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1158303b-644c-4c55-b2c3-decadf8bb7a2">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<subDataset name="Empty Dataset1" uuid="6dee67e5-380e-43d2-978d-fbb7c6eab36f"/>
+	<parameter name="Date" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT SUM(Amount)
+FROM paymentdetail
+GROUP BY DATE(Date) 
+ORDER BY DATE DESC LIMIT 1;
+]]>
+	</queryString>
+	<field name="SUM(Amount)" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="SUM(Amount)"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="65" y="0" width="355" height="51" uuid="a0615b85-81a0-4322-a4b3-e8a37cceb874"/>
+				<textElement>
+					<font fontName="Algerian" size="20" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Success Higher Education Center]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="101" y="40" width="279" height="31" uuid="05d76b36-d0b8-434f-a85e-2534703320ab"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[ Sri Vipulasiri Mawatha, Old Road, Kalutara]]></text>
+			</staticText>
+			<line>
+				<reportElement x="65" y="71" width="345" height="1" uuid="dfe3bd9b-5164-4655-aae8-828df47db5f4"/>
+				<graphicElement>
+					<pen lineWidth="2.0"/>
+				</graphicElement>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="100" splitType="Stretch">
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="0" y="10" width="140" height="30" uuid="45bbb77e-bc61-4d41-b7a7-00ebb59d606f"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm">
+				<reportElement x="150" y="10" width="140" height="30" uuid="a0db1245-0b51-4efc-a662-b401927f2087"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="110" y="70" width="110" height="30" uuid="1c7d4ec8-e967-4077-835b-0a509cf0f134"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Today Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="250" y="70" width="150" height="30" uuid="f1ab1e00-8f05-46d9-8df1-06c17a169404"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Income]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="67" splitType="Stretch">
+			<textField>
+				<reportElement x="270" y="0" width="80" height="30" uuid="2b1c1968-1e20-4da8-ab28-a9e8da844dfd"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{SUM(Amount)}]]></textFieldExpression>
+			</textField>
+			<textField pattern="MMMM d, yyyy">
+				<reportElement x="110" y="0" width="110" height="30" uuid="2835a953-3a58-4184-afd5-fd8e6f3603e0"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Date}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="250" y="30" width="80" height="1" uuid="dd87600a-fd27-4a9c-a7bc-6f29b347a1ba"/>
+			</line>
+			<line>
+				<reportElement x="250" y="33" width="80" height="1" uuid="71a9509f-62a0-4d94-9a29-16e475c2a868"/>
+			</line>
+			<staticText>
+				<reportElement x="250" y="0" width="20" height="30" uuid="1e76cbf7-a90f-4148-80f3-b3bcc078d2b3"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Rs.]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="117" y="20" width="220" height="20" uuid="14d242e2-b21c-4af6-ab42-ba72d69cea60"/>
+				<text><![CDATA[Software Developd By Thiha Technologies]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>
